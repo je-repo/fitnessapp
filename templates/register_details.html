@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block main %}
+    <div class="container text-center w-25">
+        <!-- register details post form -->
+        <form action="/register_details" method="post" class="row row-cols-1" id="registration-form">
+            <!-- first name -->
+            <div class="col">
+                <label for="firstname" class="form-label">First Name (Optional)</label>
+                <input type="text" class="form-control text-center" form="registration-form" name="firstname" autocomplete="off">
+            </div>
+            <!-- last name -->
+            <div class="col">
+                <label for="lastname" class="form-label">Last Name (Optional)</label>
+                <input type="text" class="form-control text-center" form="registration-form" name="lastname" autocomplete="off">
+            </div>
+            <!-- date of birth -->
+            <div class="col">
+                <label for="date-of-birth" class="form-label">Date of Birth (Optional)</label>
+                <input type="text" class="form-control text-center" form="registration-form" name="date-of-birth" autocomplete="off" onfocus="this.type='date'" onblur="this.type='text'">
+            </div>
+            <!-- height (cm) -->
+            <div class="col">
+                <label for="height_cm" class="form-label">Height(CM) (Optional)</label>
+                <input type="text" class="form-control text-center" form="registration-form" name="height" autocomplete="off">
+            </div>
+            <!-- weight (kg) -->
+            <div class="col">
+                <label for="weight_kg" class="form-label">Weight(KG) (Optional)</label>
+                <input type="text" class="form-control text-center" form="registration-form" name="weight" autocomplete="off">
+            </div>
+            
+            <!-- submit button -->
+            <button type="submit" form="registration-form" class="btn btn-success mt-3">Submit</button>
+            <!-- <a href="/"><button type="button" class="btn btn-success mt-2">Skip</button></a> -->
+        </form>
+    </div>
+{% endblock %}
+
+

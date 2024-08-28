@@ -1,0 +1,30 @@
+.page-item {
+    margin: 0 2.5px;
+}
+
+.workout-history-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.workout-history-table-wrapper {
+    width: 80%;
+    padding: 25px 0;
+}
+
+.workout-history-table {
+    width: 80%;
+    min-width: 500px;
+    margin: 0 auto;
+}
+
+tr * {
+    border-style: none; /* remove white bottom border lines */
+}
+
+ul {
+    margin: 1rem 0;
+}
+
