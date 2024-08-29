@@ -152,7 +152,6 @@ def editprofile():
     profile = db.execute("SELECT * FROM user WHERE id = ?;", user_id)[0]
 
     if request.method == "POST":
-
         # get form data
         new_first_name = request.form.get("edit-first-name", None)
         new_last_name = request.form.get("edit-last-name", None)
