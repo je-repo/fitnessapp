@@ -1,16 +1,14 @@
-# IronMetrics
+# fitnessapp
 
-Video Demo: https://youtu.be/zgJ8W3RJBmo
-
-Description: IronMetrics is a fitness app that allows users to create profiles to track their workouts and see analytics about their workout habits. It is a web app that that uses a SQLite3 database to perform create, read, update and delete (CRUD) functionalities on user data.
+## Introduction
+fitnessapp is a fitness tracking web app. On this web app, users can create profiles to track their workouts and view analytics to review progress and habits. It is a web app that that uses a SQLite3 database to perform create, read, update and delete (CRUD) functionalities on user data.
 
 ## Login Credentials
-username: demo
-password: demo
+Username: demo\
+Password: demo
 
-
-## Other Notes
-The upper body targets muscles such as the chest, back, shoulders, biceps, and triceps, while the lower body focuses on the quads, hamstrings, glutes, calves, and abs
+## Tutorial
+work in progress.
 
 ## Features
 
@@ -49,7 +47,7 @@ Below is a list with brief explanations of the app's features:
 
 ## Tech Stack
 
-The tech stack for IronMetrics includes:
+The tech stack includes:
 - Bootstrap
 - CSS
 - Flask
@@ -58,16 +56,16 @@ The tech stack for IronMetrics includes:
 - Python
 - SQLite3
 
-For the frontend, IronMetrics primarily relies on Bootstrap's pre-built components, in SCSS, HTML and JavaScript, for UI-/UX design and -functionality. CSS was used to further customise certain elements. Further frontend functionality was built with JavaScript, as needed. The web pages were designed, structured and displayed with HTML.
+For the frontend, fitnessapp primarily relies on Bootstrap's pre-built components, in SCSS, HTML and JavaScript, for UI-/UX design and -functionality. CSS was used to further customise certain elements. Further frontend functionality was built with JavaScript, as needed. The web pages were designed, structured and displayed with HTML.
 The minimalistically-designed UI's color palette primarily uses green, from Bootstrap's success class, and white. Text color is black on white background or white on green background. Plotly and SCSS were also considered for the frontend.
 
 For the backend, Flask and Python are used as the web development framework and programming language, respectively. SQLite3 serves as the database, as it is easy to set up and includes CRUD and other necessary features to support the web app features. PostgreSQL, MySQL and SQLAlchemy were also considered for the project.
 
 <br>
 
-## App folder structure
+## Folder structure
 
-IronMetrics follows Flask's default folder structure:
+fitnessapp follows Flask's default folder structure:
 - finalproject
     - flask_session
     - static

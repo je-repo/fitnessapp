@@ -8,12 +8,36 @@ iframe {
 .horizontal-bar-chart-1,
 .horizontal-bar-chart-2 {
     width: 750px;
-    height: 450px; /* height fixed at 450px per default by plotly library. plotly forum indicates that this seems to be a common limitation. */
+    height: 450px; 
+    /* height fixed at 450px per default by plotly library. plotly forum indicates that this seems to be a common limitation. */
     margin: 20px auto;
 }
+
+/* test */
+/* .line-graph,
+.pie-chart,
+.horizontal-bar-chart-1,
+.horizontal-bar-chart-2 {
+    width: 70%;
+    height: 80%;
+    margin: 20px auto;
+} */
 
 .graphs-wrapper {
     padding: 25px;
     width: 800px;
     margin: 0 auto;
 }
+
+/* test */
+/* .graphs-wrapper {
+    padding: 25px;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+} */
+
+/* test */
+/* .column {
+    width: 50%;
+} */
