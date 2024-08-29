@@ -71,36 +71,40 @@
 <div class="container recent-workouts-wrapper">
     <div class="recent-workouts-table-wrapper secondary-color-background">
         <h3>Most Recent Workouts</h3>
-        <table class="table text-white recent-workouts-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Start</th>
-                    <th>End</th>
-                    <!-- empty cell for consistent table formatting -->
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for workout in workout_history %}
+        {% if workout_history %}
+            <table class="table text-white recent-workouts-table">
+                <thead>
                     <tr>
-                        <td>{{ workout.date }}</td>
-                        <td>{{ workout.start_time }}</td>
-                        <td>{{ workout.end_time }}</td>
-                        <td>
-                            <form action="/" method="post" style="display: inline;" id="edit-workout{{ workout.id }}">
-                                <input type="hidden" name="edit-workout-id" form="edit-workout{{ workout.id }}" value="{{ workout.id }}">
-                                <button type="submit" form="edit-workout{{ workout.id }}" class="btn btn-tertiary-color">View</button>
-                            </form>
-                            <form action="/deleteworkout" method="post" id="delete-workout{{ workout.id }}" onsubmit="return confirm('Irreversibly delete workout?')" style="display: inline;">
-                                <input type="hidden" name="delete-workout-id" form="delete-workout{{ workout.id }}" value="{{ workout.id }}">
-                                <button type="submit" form="delete-workout{{ workout.id }}" class="btn btn-tertiary-color">Delete</button>
-                            </form>
-                        </td>
+                        <th>Date</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <!-- empty cell for consistent table formatting -->
+                        <th></th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for workout in workout_history %}
+                        <tr>
+                            <td>{{ workout.date }}</td>
+                            <td>{{ workout.start_time }}</td>
+                            <td>{{ workout.end_time }}</td>
+                            <td>
+                                <form action="/" method="post" style="display: inline;" id="edit-workout{{ workout.id }}">
+                                    <input type="hidden" name="edit-workout-id" form="edit-workout{{ workout.id }}" value="{{ workout.id }}">
+                                    <button type="submit" form="edit-workout{{ workout.id }}" class="btn btn-tertiary-color">View</button>
+                                </form>
+                                <form action="/deleteworkout" method="post" id="delete-workout{{ workout.id }}" onsubmit="return confirm('Irreversibly delete workout?')" style="display: inline;">
+                                    <input type="hidden" name="delete-workout-id" form="delete-workout{{ workout.id }}" value="{{ workout.id }}">
+                                    <button type="submit" form="delete-workout{{ workout.id }}" class="btn btn-tertiary-color">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No workouts found.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
