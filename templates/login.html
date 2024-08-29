@@ -7,9 +7,8 @@
 {% block title %}Login{% endblock %}
 
 {% block main %}
-    <!-- <div class="container text-center w-25"> -->
     <div class="container text-center">
-        <!-- login form(post) -->
+        <!-- login form(POST) -->
         <form action="/login" method="post" class="row row-cols-1 login-form">
             <!-- username -->
             <div class="col input-wrapper">
@@ -26,5 +25,16 @@
             <button type="submit" class="btn btn-tertiary-color mt-3">Log In</button>
             </div>
         </form>
+        
+
+    </div>
+    <div class="login-text">
+        <p>
+            <b>Demo login credentials</b>
+            <br>
+            Username: demo
+            <br>
+            Password: demo
+        </p>
     </div>
 {% endblock %}
