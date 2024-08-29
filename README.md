@@ -77,7 +77,11 @@ fitnessapp follows Flask's default folder structure:
 
 fitnessapp is the parent folder, also known as project root, containing all project resources.
 
+### \_\_pycache\_\_
+work in progress.
+
 ### flask_session
+work in progress.
 
 flask_session is used to temporarily store session (cookie) data on the server-side. A session is measured as the period of time, when a client logs into the server and logs out of the server. Information including user ID and relevant app data are gathered during this period. Session data can be used to transfer information between web pages and features. Storing the session on the server-side has security advantages, as the data cannot be altered or tampered with.
 
