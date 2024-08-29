@@ -66,14 +66,16 @@ For the backend, Flask and Python are used as the web development framework and 
 ## Folder structure
 
 fitnessapp follows Flask's default folder structure:
-- finalproject
-    - flask_session
+- fitnessapp
+    - (\_\_pycache\_\_)
+    - (flask_session)
     - static
     - templates
+    - zzz_other_files
 
-### finalproject
+### fitnessapp
 
-finalproject is the parent folder, also known as project root, containing all project resources.
+fitnessapp is the parent folder, also known as project root, containing all project resources.
 
 ### flask_session
 
@@ -93,7 +95,7 @@ This project's templates are HTML files containing both static- and dynamic elem
 
 The above-mentioned folders contain the following files:
 
-- finalproject
+- fitnessapp
     - app.py
     - fitnessapp.db
     - helpers.py
@@ -117,7 +119,7 @@ The above-mentioned folders contain the following files:
     - register.html
     - workouthistory.html
 
-### finalproject files:
+### Files Descriptions
 
 #### app.py
 
@@ -349,6 +351,4 @@ This HTML file shows the user a history of all the workouts ever created on thei
 Designing and implementing a full stack application from start to finish was a challenging and educational experience. The steps of this project followed broadly included ideation, define functionality, choose tech stack, implementing the front- and backend and repeating steps.
 
 Some of the challenges encountered along the way are to reduce redundancy while designing a relational database, updating relational database tables, dealing with scope creep, troubleshooting unexpected problems, refactoring code, making tradeoffs and learning new technologies.
-
-Overall, the CS50 final project was challenging and forced me to gain a better understanding of practical programming by selecting, learning and applying new technologies to bring an app idea to life.
 
