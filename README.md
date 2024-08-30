@@ -1,7 +1,23 @@
 # fitnessapp
 
+## Table of Content
+work in progress.
+[Project Layout](#Project-Layout)
+
+
 ## Introduction
-fitnessapp is a fitness tracking web app. On this web app, users can create profiles to track their workouts and view analytics to review progress and habits. It is a web app that that uses a SQLite3 database to perform create, read, update and delete (CRUD) functionalities on user data.
+"fitnessapp" is a fitness tracking web app. This web app lets users create profiles to track their workouts and data visualise their weightlifing progression and -habits. 
+
+A previous version of this web app was created as Harvard cs50x's final project, where a self-selected idea was implemented as per specified requirements. Given some sort of interest in fitness tracking and building a portfolio project, the web app was extended with new features, database schemas, pages and design, among other things.
+
+The tech stack includes:
+* Python
+* Flask
+* SQLite3
+* HTML
+* CSS
+
+It is a web app that that uses a SQLite3 database to perform create, read, update and delete (CRUD) functionalities on user data.
 
 ## Login Credentials
 Username: demo\
@@ -56,34 +72,33 @@ The tech stack includes:
 - Python
 - SQLite3
 
-For the frontend, fitnessapp primarily relies on Bootstrap's pre-built components, in SCSS, HTML and JavaScript, for UI-/UX design and -functionality. CSS was used to further customise certain elements. Further frontend functionality was built with JavaScript, as needed. The web pages were designed, structured and displayed with HTML.
+For the frontend, "fitnessapp" primarily relies on Bootstrap's pre-built components, in SCSS, HTML and JavaScript, for UI-/UX design and -functionality. CSS was used to further customise certain elements. Further frontend functionality was built with JavaScript, as needed. The web pages were designed, structured and displayed with HTML.
 The minimalistically-designed UI's color palette primarily uses green, from Bootstrap's success class, and white. Text color is black on white background or white on green background. Plotly and SCSS were also considered for the frontend.
 
 For the backend, Flask and Python are used as the web development framework and programming language, respectively. SQLite3 serves as the database, as it is easy to set up and includes CRUD and other necessary features to support the web app features. PostgreSQL, MySQL and SQLAlchemy were also considered for the project.
 
 <br>
 
-## Folder structure
+## Project Layout<a name="Project-Layout"></a>
 
-fitnessapp follows Flask's default folder structure:
-- fitnessapp
-    - (\_\_pycache\_\_)
-    - (flask_session)
-    - static
-    - templates
-    - zzz_other_files
+"fitnessapp" is the project directory, or parent folder. It references the [Flask project layout](https://flask.palletsprojects.com/en/3.0.x/tutorial/layout/) to organise its folders and project files and looks as follows:
 
-### fitnessapp
-
-fitnessapp is the parent folder, also known as project root, containing all project resources.
+.../fitnessapp\
+&ensp;&ensp;├── \_\_pycache\_\_ (not commiteed)/\
+&ensp;&ensp;├── flask_session (not commiteed)/\
+&ensp;&ensp;├── static/\
+&ensp;&ensp;├── templates/\
+&ensp;&ensp;└── zzz_other_files/
 
 ### \_\_pycache\_\_
-work in progress.
+The \_\_pycache\_\_ folder stores compiled bytecode from projects. This enables the interpreter to shorten script startup times by skipping recurring steps, such as lexing and parsing and validating correctness. 
+
+\_\_pycache\_\_ is usually added to the ".gitignore" file, as is the case here. The folder is not commited to this repo and is mentioned, as it will be created after running the Flask web app.
 
 ### flask_session
-work in progress.
+The flask_session folder stores server-side "temporary" session (cookie) data. The information and attributes include user ID, pages visited and action taken. These can be required for certain interactions, such as visiting pages for logged-in users only. 
 
-flask_session is used to temporarily store session (cookie) data on the server-side. A session is measured as the period of time, when a client logs into the server and logs out of the server. Information including user ID and relevant app data are gathered during this period. Session data can be used to transfer information between web pages and features. Storing the session on the server-side has security advantages, as the data cannot be altered or tampered with.
+flask_session is also added to the ".gitignore" file and not committed to this repo. It is mentioned, as it will appear in the folder structure, after running the Flask web app.
 
 ### static
 
