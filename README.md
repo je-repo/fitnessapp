@@ -79,7 +79,7 @@ For the backend, Flask and Python are used as the web development framework and 
 
 <br>
 
-## Project Layout<a name="Project-Layout"></a>
+## Project Layout
 
 "fitnessapp" is the project directory, or parent folder. It references the [Flask project layout](https://flask.palletsprojects.com/en/3.0.x/tutorial/layout/) to organise its folders and project files and looks as follows:
 
