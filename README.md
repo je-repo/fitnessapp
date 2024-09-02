@@ -1,81 +1,105 @@
 # fitnessapp
 
 ## Table of Content
-work in progress.
-[Project Layout](#Project-Layout)
+
+1. [Introduction](#Introduction)
+2. [Login Credentials](#Login-Credentials)
+3. [Tutorial](#Tutorial)
+4. [Tech Stack](#Tech-Stack)
+5. [Features](#Features)
+6. [Project Layout](#Project-Layout)
+7. [Files](#Files)
+8. [Conclusion](#Conclusion)
 
 
 ## Introduction
+
 "fitnessapp" is a fitness tracking web app. This web app lets users create profiles to track their workouts and data visualise their weightlifing progression and -habits. 
 
 A previous version of this web app was created as Harvard cs50x's final project, where a self-selected idea was implemented as per specified requirements. Given some sort of interest in fitness tracking and building a portfolio project, the web app was extended with new features, database schemas, pages and design, among other things.
 
+The tech stack includes Python, JavaScript, Bootstrap, Flask, SQLite3, HTML, CSS.
+
+## Login Credentials
+
+Username: demo\
+Password: demo
+
+## Tutorial
+
+work in progress.
+
+## Tech Stack
+
+This section discusses the utlity and selection criteria for the technologies in the tech stack of the project.
+
 The tech stack includes:
+
 * Python
+* JavaScript
+* Bootstrap
 * Flask
 * SQLite3
 * HTML
 * CSS
 
-It is a web app that that uses a SQLite3 database to perform create, read, update and delete (CRUD) functionalities on user data.
+### Frontend
 
-## Login Credentials
-Username: demo\
-Password: demo
+The frontend is built with Bootstrap, CSS, HTML and JavaScript. Bootstrap is utilised for its pre-built CSS components and some JavaScript functionality. The rest of the styling and further customisation is made with CSS. Sass was considered for styling the frontend. The website layout is built with HTML. JavaScript is used to build or customise interactive frontend elements.
 
-## Tutorial
-work in progress.
+### Backend
 
-## Features
-
-Below is a list with brief explanations of the app's features:
-- New account registeration
-    - Users can create a new account by filling out the required fields of username, password and confirm password
-    - Password must contain one special character, one number, one upper case letter and one lower case letter
-- User login
-    - Users can login with their username and password to use track their workouts
-- Edit profile information
-    - Shows profile information
-    - First name, last name, date of birth, height(cm) and weight(kg) can be updated
-    - Change password button, allows password to be modified
-- Change password
-    - Users can change their password, by confirming the old password, entering a new password and confirming the new password
-- Homepage
-    - Logged-in users are redirected to the homepage
-    - A workout metrics dashboard is located near the top
-    - Below the workout dashboard is a brief workout history, showing the 5 most recent workouts that can be edited or deleted
-- Create workouts
-    - Users can create workout records to track exercises, sets, reps and weights performed
-    - The pre-populated workout date and start time can be edited
-    - To create an exercise set, the exercises must be chosen from the autosuggest field that appears when typing an exercise name
-    - Clicking on one of the autosuggstions will populated the exercise input field with the autosuggestion
-    - Incorrectly entered exercises will raise an error
-    - Sets, reps and weights can also be entered
-    - Exercises cannot have duplicate sets in the same workout
-    - Exercise sets can be deleted to make corrections
-- Workout history
-    - Users can view, edit and delete all their workouts
-    - The pagination shows 10 workouts per page
-    - Workouts are sorted by date in descending order by default, meaning the most recent workout comes first and the oldest workout comes last
-    - The button next to the date heading switches the workout date sorting between ascending and descending orders
+The backend uses Flask, Python and SQLite3. Flask provides a lightweight and flexible web app framework in Python. SQLite3 provides an embedded database to support the CRUD (Create, Read, Update and Delete) functionalities. This eliminates the need to set up a standalone database. PostreSQL, MySQL and SQLAlchemy were considered.
 
 <br>
 
-## Tech Stack
+## Features
 
-The tech stack includes:
-- Bootstrap
-- CSS
-- Flask
-- HTML
-- JavaScript
-- Python
-- SQLite3
+Below is a brief summary of the app's features:
 
-For the frontend, "fitnessapp" primarily relies on Bootstrap's pre-built components, in SCSS, HTML and JavaScript, for UI-/UX design and -functionality. CSS was used to further customise certain elements. Further frontend functionality was built with JavaScript, as needed. The web pages were designed, structured and displayed with HTML.
-The minimalistically-designed UI's color palette primarily uses green, from Bootstrap's success class, and white. Text color is black on white background or white on green background. Plotly and SCSS were also considered for the frontend.
-
-For the backend, Flask and Python are used as the web development framework and programming language, respectively. SQLite3 serves as the database, as it is easy to set up and includes CRUD and other necessary features to support the web app features. PostgreSQL, MySQL and SQLAlchemy were also considered for the project.
+* New account registeration
+    * Users can create a new account by providing the following required and optional details:
+        * Required details:
+            * Username
+            * Password
+            * E-mail address 
+        * Optional details: 
+            * First name
+            * Last name
+            * Date of Birth
+            * Height in centimeters
+            * Weight in kilograms
+    * Passwords, for security reasons, are required to contain at least:
+        * one upper case letter
+        * one lower case letter
+        * one number
+        * one special character
+* User login
+    * Users can login with their username and password to use track their workouts
+* Edit profile information
+    * Shows profile information
+    * First name, last name, date of birth, height(cm) and weight(kg) can be updated
+    * Change password button, allows password to be modified
+* Change password
+    * Users can change their password, by confirming the old password, entering a new password and confirming the new password
+* Homepage
+    * Logged-in users are redirected to the homepage
+    * A workout metrics dashboard is located near the top
+    * Below the workout dashboard is a brief workout history, showing the 5 most recent workouts that can be edited or deleted
+* Create workouts
+    * Users can create workout records to track exercises, sets, reps and weights performed
+    * The pre-populated workout date and start time can be edited
+    * To create an exercise set, the exercises must be chosen from the autosuggest field that appears when typing an exercise name
+    * Clicking on one of the autosuggstions will populated the exercise input field with the autosuggestion
+    * Incorrectly entered exercises will raise an error
+    * Sets, reps and weights can also be entered
+    * Exercises cannot have duplicate sets in the same workout
+    * Exercise sets can be deleted to make corrections
+* Workout history
+    * Users can view, edit and delete all their workouts
+    * The pagination shows 10 workouts per page
+    * Workouts are sorted by date in descending order by default, meaning the most recent workout comes first and the oldest workout comes last
+    * The button next to the date heading switches the workout date sorting between ascending and descending orders
 
 <br>
 
@@ -91,11 +115,13 @@ For the backend, Flask and Python are used as the web development framework and 
 &ensp;&ensp;└── zzz_other_files/
 
 ### \_\_pycache\_\_
+
 The \_\_pycache\_\_ folder stores compiled bytecode from projects. This enables the interpreter to shorten script startup times by skipping recurring steps, such as lexing and parsing and validating correctness. 
 
 \_\_pycache\_\_ is usually added to the ".gitignore" file, as is the case here. The folder is not commited to this repo and is mentioned, as it will be created after running the Flask web app.
 
 ### flask_session
+
 The flask_session folder stores server-side "temporary" session (cookie) data. The information and attributes include user ID, pages visited and action taken. These can be required for certain interactions, such as visiting pages for logged-in users only. 
 
 flask_session is also added to the ".gitignore" file and not committed to this repo. It is mentioned, as it will appear in the folder structure, after running the Flask web app.
@@ -367,6 +393,7 @@ This HTML file shows the user a history of all the workouts ever created on thei
 <br>
 
 ## Conclusion
+
 Designing and implementing a full stack application from start to finish was a challenging and educational experience. The steps of this project followed broadly included ideation, define functionality, choose tech stack, implementing the front- and backend and repeating steps.
 
 Some of the challenges encountered along the way are to reduce redundancy while designing a relational database, updating relational database tables, dealing with scope creep, troubleshooting unexpected problems, refactoring code, making tradeoffs and learning new technologies.
