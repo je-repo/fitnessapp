@@ -8,8 +8,9 @@
 4. [Tech Stack](#Tech-Stack)
 5. [Features](#Features)
 6. [Project Layout](#Project-Layout)
-7. [Files](#Files)
-8. [Conclusion](#Conclusion)
+7. [Conclusion](#Conclusion)
+8. [Appendices](#Appendices)
+    1. [Files](#Files)
 
 
 ## Introduction
@@ -142,7 +143,17 @@ This project's templates are HTML files containing both static- and dynamic elem
 
 <br>
 
-## Files
+## Conclusion
+
+Designing and implementing a full stack application from start to finish was a challenging and educational experience. The steps of this project followed broadly included ideation, define functionality, choose tech stack, implementing the front- and backend and repeating steps.
+
+Some of the challenges encountered along the way are to reduce redundancy while designing a relational database, updating relational database tables, dealing with scope creep, troubleshooting unexpected problems, refactoring code, making tradeoffs and learning new technologies.
+
+<br>
+
+## Appendices
+
+### Files
 
 The project folders contain the following files:
 
@@ -190,17 +201,9 @@ The project folders contain the following files:
 &ensp;&ensp;├── README.md\
 &ensp;&ensp;└── requirements.txt
 
-CSS Notes:
-- declared custom CSS properties. benefits include Custom properties allow a value to be defined in one place, then referenced in multiple other places so that it's easier to work with. Another benefit is readability and semantics.
-- style.css provides base styling on every page, to allow styling to be defined in one place and minimise repetitive code.
-- other .css files are used to add- or customise styling for their respective pages
-- scripts.js adds frontend functionality for pages
-editworkout.html - show hide input forms with event listeners. used event delegation to save from writing repetitive code and for performance. JS event delegation is a technique that leverages event bubbling to handle events more efficiently. Instead of adding an event listener to each element individually, we can add a single event listener to a parent element and then use event. target to determine which child element was clicked.
-editworkout.html - exercise autofill feature built with JS making API call to exercise API of app. it uses event listener to list to user keyboard inputs and updates autosuggestions in "real-time"
+#### Files Descriptions
 
-### Files Descriptions
-
-#### app.py
+##### app.py
 
 This is the main Python file containing the backend logic of the web app. The functions are ordered by their name in alphabetical order from A-Z in the file. Below is a brief description of the functions in app.py.
 
@@ -298,7 +301,7 @@ SQLAlchemy was considered for its built-in pagination feature. However, switchin
 
 <br>
 
-#### fitnessapp.db
+##### fitnessapp.db
 
 This is the SQLite3 database that supports the web app's CRUD (Create, Read, Update & Delete) functionality. The tables are designed to minimise column redundancy. Features that interact with the database include user profile creation, updating user profiles, reading workout history, editing workouts, deleting workouts, etc.
 
@@ -306,7 +309,7 @@ For an overview of the database's table schema, refer to the table creation quer
 
 <br>
 
-#### helpers.py
+##### helpers.py
 
 helpers.py contains support functions used in app.py. This facilitates the DRY (Don't Repeat Yourself) principle. Some functions are referenced from CS50's problem set 9 - Finance.
 
@@ -326,7 +329,7 @@ This function takes a database variable and string as arguments. Returns a user 
 
 <br>
 
-#### zzz_load_ext_api_exercises.py
+##### zzz_load_ext_api_exercises.py
 
 This Python file performs an API call to an open source workout exercises database at https://wger.de/api/v2/ by https://wger.de/en/software/api.
 The JSON data is parsed and loaded into an Excel sheet for further processing before being loaded into fitnessapp.db.
@@ -334,19 +337,19 @@ This file was used to create the pre-loaded exercises. It is no longer in use an
 
 <br>
 
-#### readme.md
+##### readme.md
 
 A text file written in Markdown language that describes the app, how to set it up and how to use it, among other things.
 
 <br>
 
-#### schema.sql
+##### schema.sql
 
 This file contains SQL queries used to create- and query the tables in "fitnessapp.db".
 
 <br>
 
-#### sql_migrations.py
+##### sql_migrations.py
 
 This Python file contains scripts to migrate- and load data into SQLite3 tables. The purpose of the former was to preserve user data, when modifying table schemas.
 
@@ -359,76 +362,79 @@ The migration steps are as below:
 
 <br>
 
-### static files:
+#### static folder
 
-#### scripts.js
+In this web app, the static folder stores .css and .js files without subfolders. For future projects, it would be beneficial to save different file types in respective subfolders for organisational purposes and scalability. 
 
-This file contains scripts to extend the frontend functionality of the following pages:
+##### CSS files
+
+The CSS files are structured so that style.css provides the basic styling on every page. This follows the DRY (Don't Repeate Yourself) principle and allows for editing elements of many pages in one place. The other CSS files are used to customise styling for each respective page. 
+
+Additionally, custom CSS properties are declared in style.css. This carries the benefit of declaring and editing values in one place that are referenced in multiple other places. It also adds readability and semantics. Bootstrap classes are also used to add UI design and frontend functionality.
+
+##### scripts.js
+
+Contains scripts for frontend functionality of the following pages:
 - createworkout.html - prepopulate date- and time input fields
-- editworkout.html - exercise input autosuggestions with API call to "/exercise" endpoint
+- editworkout.html - exercise input autosuggestions with API call to "/exercise" endpoint. An event listener listens to keyboard inputs to update auto-suggestions in "real-time". 
 - editworkout.html - click autosuggestions to populate exercise input box
+- editworkout.html - uses event delegation to handle show/hide functionality, among other things. Event delegation makes use of event bubbling by attaching an event listener to a parent element to handle the events of its children. This saves from repetitively attaching multiple event listeners to many child elements.
 
 <br>
 
-### templates files:
+#### templates folder
 
-This folder contains HTML template files that containt static- and dynamic content. The Jinja templating language is used to write dynamic and easy-to-maintain HTML pages. Bootstrap classes are used to add UI design and frontend functionality.
+This folder contains HTML template files that containt static- and dynamic content. These files use the Jinja templating language to write dynamic and easy-to-maintain HTML pages. Bootstrap classes are used to add UI design and frontend functionality.
 
-#### base.html
+##### base.html
 
-The base.html file serves as the boilerplate code, containing sections of code that is repeated across multiple files.
-These include the doctype declaration, head tag, body tag, navigation bar and footer tag.
+The base.html file serves as the boilerplate code, containing the navigation bar, footer and other elements repeated over other pages.
+The boilderplate code includes the doctype declaration, head tag and body tag, among other things.
 
-#### changepassword.html
+##### changepassword.html
 
-This HTML file contains a form that allows users to change their password.
+Contains a form to change the logged-in user's password.
 
-#### createworkout.html
+##### createworkout.html
 
-The createworkout.html file contains a pre-populated form that users can edit to create a workout record.
+Contains a pre-populated form to create a workout record.
 
-#### editprofile.html
+##### editprofile.html
 
-This HTML file contains a form that lets users change their profile details, including first name, last name, date of birth, height(cm) and weight(kg).
+Contains a form to change user profile details, including first name, last name, date of birth, height(cm) and weight(kg).
 
-#### editworkout.html
+##### editworkout.html
 
-The editworkout.html file allows users to edit the workout information and exercises relating to a workout. The former includes, date, start time and end time. The latter includes exercises, sets, reps and weights(kg). Workout exercises and sets are grouped by exercise name and set number, both in ascending order. This ensures a structured overview of the data, regardless of order in which the exercise and sets were entered.
+Contains fields to display workout information, such as datetime, exercises, sets, reps and weight, among other things.
+Workout exercises and sets are grouped by exercise name and set number, both in ascending order. This ensures a structured overview of the data, regardless of order of data entry.
 
-#### error_message.html
+##### error_message.html
 
-This HTML file displays a meme with a customisable error message and error code. It is referenced from CS50's problem set 9 - Finance.
+Displays a customisable error message and error code. This is referenced from CS50's problem set 9 - Finance.
 
-#### index.html
+##### index.html
 
-The index.html file is the default page that a user is redirected to, after successful login.
-It shows the users a workout metrics dashboard and a brief workout history containing the most recent 5 workouts.
+This is the homepage for logged-in users.
+It displays a workout metrics dashboard and the most recent 5 workouts.
 
-#### login.html
+##### login.html
 
-This is the default page shown, if a user is not logged into the web app.
-The user can login with their credentials or create a new account with the register button on the top right.
+This is the first page to be shown, if a user is not logged in.
+The user can login with their credentials or create a new account with the register button.
 
-#### profile.html
+##### profile.html
 
-This HTML file displays a users profile data, including user id, member since, username, first name, last name, date of birth, height(cm) and weight(kg).
-The user can click on the edit profile button to update their details or the edit password button to change their password.
+Displays user profile data, including user id, member since, username, first name, last name, date of birth, height(cm) and weight(kg).
+The details can be updated with the edit profile button. The current user's password can be updated with the change password button.
 
-#### register.html
+##### register_login.html
 
-The register.html file allows users to enter information to create a new account that can be used to access the web app.
-Username, password and confirm password are required fields for registration.
-First name, last name, date of birth, height(cm) and weight(kg) are optional fields and can be updated after account creation through profile.html.
+This file contains required form fields to create new accounts with. The required fields are username, password and confirm password.
 
-#### workouthistory.html
+##### register_details.html
 
-This HTML file shows the user a history of all the workouts ever created on their respective account. The records are ordered by date in descending order by default, which can be switched to ascending order by clicking on the button next to the date heading. Additionally, the workout data is paginated to 10 rows per page for a better viewing experience. Workout records can be edited or deleted from this page.
+This file contains optional form fields to create new accounts with. The optional fields are first name, last name, date of birth, height(cm) and weight(kg). These can be edited after account creation from the profile page.
 
-<br>
+##### workouthistory.html
 
-## Conclusion
-
-Designing and implementing a full stack application from start to finish was a challenging and educational experience. The steps of this project followed broadly included ideation, define functionality, choose tech stack, implementing the front- and backend and repeating steps.
-
-Some of the challenges encountered along the way are to reduce redundancy while designing a relational database, updating relational database tables, dealing with scope creep, troubleshooting unexpected problems, refactoring code, making tradeoffs and learning new technologies.
-
+Displays history of all workouts related to the current logged-in user. The records are ordered by date in descending order by default, which can be switched to ascending order by clicking on the button next to the date heading. The workout data is paginated to 10 rows per page. Workout records can be edited or deleted from this page.
