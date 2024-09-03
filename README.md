@@ -300,57 +300,29 @@ SQLAlchemy was considered for its built-in pagination feature. However, switchin
 
 #### fitnessapp.db
 
-This is the SQLite3 database file. The relational tables are designed to minimise column redundancy. The web app's various features perform CRUD (Create, Read, Update & Delete) on this database. Examples include user profile creation, updating user profiles, reading workout history, editing workouts, deleting workouts, etc.
+This is the SQLite3 database that supports the web app's CRUD (Create, Read, Update & Delete) functionality. The tables are designed to minimise column redundancy. Features that interact with the database include user profile creation, updating user profiles, reading workout history, editing workouts, deleting workouts, etc.
 
-*Outdated, consider deleting or adding a section on database schema?\
-fitnessapp.db contains the following tables, columns and data types:
-
-- exercises
-    - id INTEGER (primary key)
-    - exercise TEXT
-- sets
-    - user_id INTEGER (foreign key referencing the user table's id column)
-    - workout_id INTEGER (foreign key referencing the workout table's id column)
-    - exercise_id INTEGER (foreign key referencing the exercise table's id column)
-    - exercise_set INTEGER
-    - reps INTEGER
-    - weight_kg REAL
-    - PRIMARY KEY (user_id, workout_id, exercise_id, exercise_set)
-- users
-    - id INTEGER (primary key)
-    - username TEXT
-    - hash TEXT
-    - member_since TEXT
-    - first_name TEXT
-    - last_name TEXT
-    - date_of_birth TEXT
-    - height_cm REAL
-    - weight_kg REAL
-- workouts
-    - id INTEGER
-    - user_id INTEGER (foreign key referencing the user table's id column)
-    - date TEXT
-    - start_time TEXT
-    - end_time TEXT
+For an overview of the database's table schema, refer to the table creation queries in "schema.sql" in the folder "zzz_other_files".
 
 <br>
 
 #### helpers.py
 
-helpers.py contains support functions that are imported in app.py for reuse. This facilitates the DRY (Don't Repeat Yourself) principle. Some functions in this file are referenced from CS50's problem set 9 - Finance.
+helpers.py contains support functions used in app.py. This facilitates the DRY (Don't Repeat Yourself) principle. Some functions are referenced from CS50's problem set 9 - Finance.
 
 helpers.py includes the following functions:
-- error_message(message, code=400)
 
-    Takes in error message- and code arguments. The default code is 400, if no code is provided. It renders an error page showing a meme with the error message- and code arguments.
+**error_message(message, code=400)**
 
-- login_required(f)
+Takes in error message- and code arguments. The default code is 400, if no code is provided. It renders an error page showing the error message- and code arguments.
 
-    A function decorator, requiring users to be logged in to access the wrapped function. Otherwise, they will be redirected to the login page. The wrapped functions are usually functions that render html files.
+**login_required(f)**
 
-- retrieve_user(database, username_form_id)
+A function decorator, requiring users to be logged in to access the wrapped function. Visitors that are not logged-in will be redirected to the login page.
 
-    This function takes a database variable and string as arguments, respectively. Returns a user dict from the database table "users". Returns None if the user does not exist.
+**retrieve_user(database, username_form_id)**
+
+This function takes a database variable and string as arguments. Returns a user dict from the database table "users". Returns None if the user does not exist.
 
 <br>
 
@@ -364,33 +336,26 @@ This file was used to create the pre-loaded exercises. It is no longer in use an
 
 #### readme.md
 
-A documentation file containing instructions, support or details to help readers better undertand a project. It is formatted in the lightweight markup language Markdown.
+A text file written in Markdown language that describes the app, how to set it up and how to use it, among other things.
 
 <br>
 
 #### schema.sql
 
-This file contains the SQL queries used to create the tables in fitnessapp.db and to facilitate the interactions between the web app and the database.
-It includes statements to create the database tables "users", "workouts", "sets" and "exercises".
-There are also statements querying data to be displayed on pages, such as on index.html and workouthistory.html. Example metrics include average workout duration, days since last workout, workouts in last 7 days, workouts in last 30 days, workouts in last 90 days, total training volume, workout history, workout history pagination and sorting workout history by date.
+This file contains SQL queries used to create- and query the tables in "fitnessapp.db".
 
 <br>
 
-#### usersmigration.py
+#### sql_migrations.py
 
-This Python file was used to update the database table "users", while preserving the existing data. This was used to modify the database "users" table a number of times.
-The process includes the following steps:
-- migrate the existing data from the old table to a temporary table
-- delete the old table
-- create a new table
-- migrate data from the temporary table to the new table
-- delete the temporary table.
+This Python file contains scripts to migrate- and load data into SQLite3 tables. The purpose of the former was to preserve user data, when modifying table schemas.
 
-<br>
-
-### flask_session files:
-
-This folder stores auto-generated files with user session data. A session is measured as the period of time, when a client logs into the server and logs out of the server.
+The migration steps are as below:
+1. migrate data from the old table to a temporary table
+2. delete old table
+3. create a new table
+4. migrate data from temporary table to new table
+5. delete temporary table
 
 <br>
 
@@ -398,13 +363,10 @@ This folder stores auto-generated files with user session data. A session is mea
 
 #### scripts.js
 
-This file contains JavaScript code to extend the frontend functionality of the web app.
-
-It includes functions for the following pages:
+This file contains scripts to extend the frontend functionality of the following pages:
 - createworkout.html - prepopulate date- and time input fields
-- editworkout.html - autosuggestions for exercise input box from https://wger.de/api/v2/exercise/${parameters} with parameters ?language=2&is_main=False&ordering=name&limit=400
+- editworkout.html - exercise input autosuggestions with API call to "/exercise" endpoint
 - editworkout.html - click autosuggestions to populate exercise input box
-- editworkout.html - redundant code for hiding/showing input fields to edit workout date, start time and end time
 
 <br>
 
