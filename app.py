@@ -20,8 +20,7 @@ app = Flask(__name__)
 app.secret_key = "e9c85f9aa4288eb20f69a1dec03e1a9fb69a51a7df0fa46700a19ee17c14cda2"
 
 
-# Jinja2 function to format datetime
-# used in editworkout.html among other places
+# Jinja2 function to format datetime in editworkout.html
 @app.template_filter()
 def datetime_format(value, current_format="%Y-%m-%d", format="%Y-%m-%d, %a"):
     """
@@ -680,7 +679,7 @@ def workoutanalytics():
         title_x=0.5,
     )
 
-    # scatter-/ line graph: max weight progression by exercise over workouts
+    # scatter-/ line graph: max weight progression by exercise
     # sql columns: date, muscle group, exercise, weight_kg
     try:
         sql_big6_weight = db.execute("""
@@ -837,6 +836,7 @@ def workouthistory():
 
 # ===================================================== REST API ===================================================== 
 # methods defaults to "GET"
+# API to retrieve exercise autosuggestions for editworkout.html
 @app.route("/exercise")
 @login_required
 def search_exercise():
@@ -848,6 +848,7 @@ def search_exercise():
     # python dictionaries are json-serialized by default
     return output
     
+
 # boilerplate to prevent accidental execution of entire module, if imported by another program
 if __name__ == "__main__":
     app.run(debug=True)

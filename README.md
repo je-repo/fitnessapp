@@ -222,6 +222,18 @@ session["workout_id"] is cleared with session.pop("workout_id", None) to avoid r
 When creating a new workout record, session["workout_id"] is cleared and set to the value of the new workout id.
 The user is redirected to editworkout.html after creating a new workout record.
 
+**datetime_format**
+
+Jinja2 function to format datetime in editworkout.html.
+
+**deleteworkout (login required)**
+
+Function that receives POST request to delete workouts and redirect to index.html.
+
+**editnote (login required)**
+
+Function that receives POST request to edit workout notes and redirect to editworkout.html.
+
 **editprofile (login required)**
 
 Displays user data on editprofile.html.
@@ -229,36 +241,60 @@ This includes first name, last name, date of birth, height in centimeters and we
 
 **editworkout (login required)**
 
-Renders editworkout.html file. This function updates workout information, deletes and updates exercise records.
-session.get("user_id") and session.get("workout_id") are used to filter for the relevant workout record. It is then shown on the page and can be edited. Changeable elements include date, start time, end time and workout sets, which include exercise, set, reps and weight. Try- and except clauses are used to catch expected- and unexpected errors. Workout exercises and sets are grouped by exercise name and set number, both in ascending order. This ensures a structured overview of the data, regardless of order in which the exercise and sets were entered.
+Renders editworkout.html file. This function displays and updates workout-related data, including datetime (day, start- and finish time), notes, exercises, sets, reps and weights. To maintain some sort of order, exercises and sets are grouped by alphabet and numerical value, in ascending order, respectively.
+
+The workout record is retrieved with session.get("user_id") and session.get("workout_id"). Try-except blocks are used to handle database retrieval errors. 
 
 **index (login required)**
 
-This function renders the index.html file, showing the workout metrics dashboard and brief workout history.
-The workout metrics dashboard uses the user id to query the database and calculate various metrics. This includes average workout duration, days since last workout, workouts in last 7 days, workouts in last 30 days, workouts in last 90 days and total volume lifted. Days since last workout uses a try- and except clause to catch an error that is raised, when a user account has no workout records. The total volume lifted calculation also uses a try- and except clause for a similar reason.
-The data is loaded into a dictionary called "dashboard" and passed into the render_template function, as one variable with many key-value pairs, to simplify passing multiple variables at once.
+Renders index.html. This is the homepage for logged-in users, which displays a set of workout metrics and the most recent workouts.
 
-The brief workout history shows the 5 most recent workouts that can be deleted or edited.
+The workout metrics are calulated with data retrieved with the user id. This includes average workout duration, days since last workout, workouts in last 7-, 30- and 90 days, and total volume lifted. Most recent workouts displays the 5 latest workouts for viewing, editing or deleting.
+
+Database retrieval errors are handled with try-except blocks.
 
 **login**
 
-Linked to the login.html file, this functions allows the user to login to their profile. The user id and password is submitted via a post request form. Upon successful validation of both inputs, with the retrieve_user- and check_password_hash functions, the user is then redirected to index.html. Errors are raised with the error_message function with a relevant message.
+Renders login.html. If the user is not logged-in, this will be the first page displayed, prompting them to login or register. Upon successful login, the user is redirected to index.html.
 
 **logout (login required)**
 
-This function is related to the base.html file. Specifically, the logout button located in the top right corner of the navigation bar, when a user is logged in. When executed it logs out the user from their session with session.pop("user_id", None) and redirects them to login.html.
+This function operates the logic for the logout button in the navigation bar, which is in base.html. It is displayed for logged-in users. Upon activation, the user is logged out with session.pop("user_id", None) and redirected to login.html.
 
 **profile (login required)**
 
-This function renders the profile.html file. The page displays profile information including user id, username, first name, last name, date of birth, member since, height(cm) and weight(cm) and features an edit profile button. The information is queried from the database table "users" with the user id.
+Renders profile.html. 
+This function renders the profile.html file. The page displays profile information including user id, username, first name, last name, date of birth, member since, height(cm) and weight(cm) and a button to convert between imperial- and metric units. Users are able to edit their profile details.
 
-**register**
+**search_exercise (login required)**
 
-Linked to the register.html file, this function allows users to create a new account to use the web app, via a post request form. The username, password and confirm password fields are required, in order to create an account. First name, last name, date of birth, height(cm) and weight(kg) are optional fields. They can be edited later in the profile page. If-statements are used to check that password and confirm password match, the username does not already exist in the database and that the password meets security requirements.
+API function to retrieve exercise autosuggestions for editworkout.html.
+
+**register_login**
+
+Renders register_login.html. This function is used to create a new user account via POST request. The username, password and confirm password fields are required. Passwords must meet the requirements of having at least one lower case letter, one upper case letter, one number and one special symbol. The password nad confirmed passwords have to match.
+
+**register_details**
+
+Renders register_details.html. This is the second page of the registration process. It contains optional fields to populate the user profile with first name, last name, date of birth, height(cm) and weight(kg). The data can be edited in the profile page.
+
+**workoutanalytics (login required)**
+
+Renders workoutanalytics.html. This function uses plotly, a Python open source library to render graphs to visualise workout data. Other libraries considered were seaborn and matplotlib. plotly was chosen at the time, due to perceived ease of use. The limitations of this library include enforced minimum sizes for graphs. Documentation on the difference between plotly.express and go and available features was somewhat confusing.
+
+The following graphs are displayed:
+ * Pie chart: sets performed by muscle group of all time
+ * Horizontal bar chart: top 10 exercises by sets
+ * Horizontal bar chart: top 10 exercises by weight
+ * Scatter-/ line graph: max weight progression by exercise
 
 **workouthistory (login required)**
 
-This function shows the user all workouts ever created in their account. The user id is used to filter the relevant workout records from the database table "workouts". Workout records are paginated to 10 rows per page. The user can navigate between previous, next and specific pages to view their workout history. The pagination feature is manually built with SQLite3. The SQLite3 function ROW_NUMBER () is used to number and filter the rows returned. SQLAlchemy offered built-in pagination, which could have streamlined the implementation of this feature. However, implementing SQLAlchemy would have required all SQLite3 queries to be rewritten, which was decided against for this project. The workout history is sorted by date in descending order by default and can be sorted by date in ascending order with the button next to the table heading date. The sorting can be switched back and forth with the button. Users can also edit and delete workout records on this page.
+Renders workouthistory.html. This function retrieves and displays all user workout records, ordered by date in descending order. The date sorting can be changed between ascending- and descending order with a button next to the date column heading. Each page displays 10 workouts. Workout records can be accessed for viewing and editing.
+
+The pagination feature was manually built with SQLite3. ROW_NUMBER () is used to enumerate and filter rows from the "workout" table. 
+
+SQLAlchemy was considered for its built-in pagination feature. However, switching database technology at this point would have required rewriting all SQL queries. This cost was deemed to outweigh the benefits, so, the change was not made.
 
 <br>
 
