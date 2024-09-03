@@ -74,32 +74,38 @@ Below is a brief summary of the app's features:
         * one lower case letter
         * one number
         * one special character
-* User login
+* Login to user profile
     * Users can login with their username and password to use track their workouts
-* Edit profile information
-    * Shows profile information
-    * First name, last name, date of birth, height(cm) and weight(kg) can be updated
-    * Change password button, allows password to be modified
-* Change password
-    * Users can change their password, by confirming the old password, entering a new password and confirming the new password
+* View and edit profile
+    * Logged-in users can view and edit their profile
+    * Usernames cannot be changed
+    * Passwords can be updated
+    * The following profile information can be edited:
+        * First name
+        * Last name
+        * Date of Birth
+        * Height in centimeters
+        * Weight in kilograms
 * Homepage
-    * Logged-in users are redirected to the homepage
-    * A workout metrics dashboard is located near the top
-    * Below the workout dashboard is a brief workout history, showing the 5 most recent workouts that can be edited or deleted
+    * Logged-in users can access the homepage
+    * The homepage includes the following elements:
+        * Navigation bar at the top
+        * A workout metrics dashboard near the top
+        * 5 most recent workouts
 * Create workouts
-    * Users can create workout records to track exercises, sets, reps and weights performed
-    * The pre-populated workout date and start time can be edited
-    * To create an exercise set, the exercises must be chosen from the autosuggest field that appears when typing an exercise name
-    * Clicking on one of the autosuggstions will populated the exercise input field with the autosuggestion
-    * Incorrectly entered exercises will raise an error
+    * Logged-in users can create workout records to track exercises, sets, reps and weights
+    * The workout date and -start time are prepopulated and editable
+    * To add an exercise, it must be chosen from one of the autosuggested options. Available exercises are shown, when typing full- or partial exercise names into the exercise field.\
+    Clicking on auto-suggested exercises will populated the input field with the respective exercise name.\
+    Incorrectly entered exercises will raise an error.\
+    Exercises cannot have duplicate sets in a workout.\
+    Exercises sets can be deleted.
     * Sets, reps and weights can also be entered
-    * Exercises cannot have duplicate sets in the same workout
-    * Exercise sets can be deleted to make corrections
 * Workout history
-    * Users can view, edit and delete all their workouts
-    * The pagination shows 10 workouts per page
-    * Workouts are sorted by date in descending order by default, meaning the most recent workout comes first and the oldest workout comes last
-    * The button next to the date heading switches the workout date sorting between ascending and descending orders
+    * Users can view, edit and delete workouts
+    * 10 workouts are shown per page
+    * By default workouts are sorted by date in descending order, meaning the most recent workout comes first and the oldest workout comes last.\
+    The date can be switched between ascending- and descending order with the button next to the date heading.
 
 <br>
 
@@ -128,7 +134,7 @@ flask_session is also added to the ".gitignore" file and not committed to this r
 
 ### static
 
-The static folder is used to store and serve static files. Static files do not change when the web server is running and are not generated with code while executing the program. This means that they do not change from one request to another. Examples of static files include CSS, JavaScript and images.
+This folder stores static files, which do not change when the web server is running and are not generated with code while executing the program. This means that they do not change from one request to another. Examples include HTML- and image files.
 
 ### templates
 
@@ -138,64 +144,92 @@ This project's templates are HTML files containing both static- and dynamic elem
 
 ## Files
 
-The above-mentioned folders contain the following files:
+The project folders contain the following files:
 
-- fitnessapp
-    - app.py
-    - fitnessapp.db
-    - helpers.py
-    - loadexercisedata.py
-    - readme.md
-    - schema.sql
-    - usersmigration.py
-- flask_session (stores flask session data)
-- static
-    - scripts.js
-- templates
-    - base.html
-    - changepassword.html
-    - createworkout.html
-    - editprofile.html
-    - editworkout.html
-    - error_message.html
-    - index.html
-    - login.html
-    - profile.html
-    - register.html
-    - workouthistory.html
+.../fitnessapp\
+&ensp;&ensp;├── \_\_pycache\_\_ (not commiteed)/\
+&ensp;&ensp;├── flask_session (not commiteed)/\
+&ensp;&ensp;├── static/\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── editprofile.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── editworkout.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── index.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── login.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── profile.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── register_login.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── scripts.js\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── style.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── workoutanalytics.css\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;└── workouthistory.css\
+&ensp;&ensp;├── templates/\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── base.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── changepassword.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── editprofile.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── editworkout.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── error_message.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── index.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── login.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── profile.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── register_details.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── register_login.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── workout_analytics.html\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;└── workouthistory.html\
+&ensp;&ensp;├── zzz_other_files/\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── exercises_csvs/\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── exercise_muscle_group.csv\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── exercise.csv\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── muscle_group.csv\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;└── source_exercises.xlsx\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── fitnessapp copy.db\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── plotly_test.py\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── schema.sql\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;├── sql_migrations.py\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;└── zzz_load_ext_api_exercises.py\
+&ensp;&ensp;├── app.py\
+&ensp;&ensp;├── fitnessapp.db\
+&ensp;&ensp;├── helpers.py\
+&ensp;&ensp;├── README.md\
+&ensp;&ensp;└── requirements.txt
+
+CSS Notes:
+- declared custom CSS properties. benefits include Custom properties allow a value to be defined in one place, then referenced in multiple other places so that it's easier to work with. Another benefit is readability and semantics.
+- style.css provides base styling on every page, to allow styling to be defined in one place and minimise repetitive code.
+- other .css files are used to add- or customise styling for their respective pages
+- scripts.js adds frontend functionality for pages
+editworkout.html - show hide input forms with event listeners. used event delegation to save from writing repetitive code and for performance. JS event delegation is a technique that leverages event bubbling to handle events more efficiently. Instead of adding an event listener to each element individually, we can add a single event listener to a parent element and then use event. target to determine which child element was clicked.
+editworkout.html - exercise autofill feature built with JS making API call to exercise API of app. it uses event listener to list to user keyboard inputs and updates autosuggestions in "real-time"
 
 ### Files Descriptions
 
 #### app.py
 
-This is the main Python file containing the backend logic of the web app. The functions are ordered by their name in alphabetical order from A-Z in the file.
+This is the main Python file containing the backend logic of the web app. The functions are ordered by their name in alphabetical order from A-Z in the file. Below is a brief description of the functions in app.py.
 
 **after_request**
 
-This function is not linked to an HTML file and was referenced from CS50's problem set 9 - Finance.
-It modifies key-value pairs in response.headers to not cache HTML responses.
+This function disables caching HTML responses by modifying key-value pairs in response.headers.
+It was referenced from CS50's problem set 9 - Finance. 
 
 **changepassword (login required)**
 
-Renders the changepassword.html file, and updates the relevant user's password, if it meets set requirements. A new password must have at least one lower case letter, one upper case letter, one number and one special symbol.
-An if statement is used to check that a new password meets set requirements. The new password and confirm password need to match, to change the password.
+Renders the changepassword.html page, and updates the user password via POST request. New passwords must meet the requirements of having at least one lower case letter, one upper case letter, one number and one special symbol.
 
-It is worth noting that the user is able to change their password to an old password that was used in the past, as long as it matches the character requirements. Requiring passwords to contain a minimum length is a security best practice that can be implemented.
+Passwords can be changed to old passwords used in the past, as long as it meets the character requirements. Requiring passwords to be a minimum length is a security best practice that can be implemented.
 
 **createworkout (login required)**
 
-This file renders the creatworkout.html template. This function allows users to create a new workout record in the SQLite3 database (database) table "workouts".
-session["workout_id"] is cleared with session.pop("workout_id", None). This way, if session["workout_id"] does not exist, None is returned, instead of raising an error.
-Once session["workout_id"] is cleared, a new workout record is created in the database table "workouts", of which the new workout id is set as session["workout_id"]'s value.
-The user is then redirected to editworkout.html.
+Renders creatworkout.html. This function allows users to create a new workout record in the SQLite3 database table "workouts".
+session["workout_id"] is cleared with session.pop("workout_id", None) to avoid raising an error, when session["workout_id"] doesn't exist.
+When creating a new workout record, session["workout_id"] is cleared and set to the value of the new workout id.
+The user is redirected to editworkout.html after creating a new workout record.
 
 **editprofile (login required)**
 
-User data is queried from the database table "users" and displayed on the page. This includes first name, last name, date of birth, height(cm) and weight(kg). New values for the relevant fields can be submitted via a POST request form. Upon submission of new values, the relevant user record in the database table "users" will be updated accordingly.
+Displays user data on editprofile.html.
+This includes first name, last name, date of birth, height in centimeters and weight in kilograms. The fields can be edited via a POST request, which will update the relevant user record in the "user" table in the database.
 
 **editworkout (login required)**
 
-Linked to the editworkout.html file, this function updates workout information, deletes and updates exercise records.
+Renders editworkout.html file. This function updates workout information, deletes and updates exercise records.
 session.get("user_id") and session.get("workout_id") are used to filter for the relevant workout record. It is then shown on the page and can be edited. Changeable elements include date, start time, end time and workout sets, which include exercise, set, reps and weight. Try- and except clauses are used to catch expected- and unexpected errors. Workout exercises and sets are grouped by exercise name and set number, both in ascending order. This ensures a structured overview of the data, regardless of order in which the exercise and sets were entered.
 
 **index (login required)**
@@ -230,8 +264,9 @@ This function shows the user all workouts ever created in their account. The use
 
 #### fitnessapp.db
 
-This is the web app's SQLite3 database file. The relational tables are designed to minimise column redundancy. The web app's various features perform CRUD (Create, Read, Update & Delete) on this database. Examples include user profile creation, updating user profiles, reading workout history, editing workouts, deleting workouts, etc.
+This is the SQLite3 database file. The relational tables are designed to minimise column redundancy. The web app's various features perform CRUD (Create, Read, Update & Delete) on this database. Examples include user profile creation, updating user profiles, reading workout history, editing workouts, deleting workouts, etc.
 
+*Outdated, consider deleting or adding a section on database schema?\
 fitnessapp.db contains the following tables, columns and data types:
 
 - exercises
@@ -266,7 +301,7 @@ fitnessapp.db contains the following tables, columns and data types:
 
 #### helpers.py
 
-helpers.py contains support functions that are imported in app.py for reuse. This facilitates the DRY (Don't Repeat Yourself) principle. Functions in this file are referenced from CS50's problem set 9 - Finance.
+helpers.py contains support functions that are imported in app.py for reuse. This facilitates the DRY (Don't Repeat Yourself) principle. Some functions in this file are referenced from CS50's problem set 9 - Finance.
 
 helpers.py includes the following functions:
 - error_message(message, code=400)
@@ -283,10 +318,11 @@ helpers.py includes the following functions:
 
 <br>
 
-#### loadexercisedata.py
+#### zzz_load_ext_api_exercises.py
 
 This Python file performs an API call to an open source workout exercises database at https://wger.de/api/v2/ by https://wger.de/en/software/api.
-The JSON data is parsed and loaded into the SQLite3 database fitnessapp.db.
+The JSON data is parsed and loaded into an Excel sheet for further processing before being loaded into fitnessapp.db.
+This file was used to create the pre-loaded exercises. It is no longer in use and stored in the "zzz_other_files" folder for reference.
 
 <br>
 
