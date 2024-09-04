@@ -29,7 +29,7 @@ Password: demo
 
 ## Tutorial
 
-![ Alt Text](URL)
+![fitnessapp homepage](../.screenshots/fitnessapp_homepage2.png)
 
 work in progress.
 
