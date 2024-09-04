@@ -29,59 +29,59 @@ Password: demo
 
 ## Screenshots/Tutorial
 
-<p style="text-align:center">Login Page</p>
+Login Page
 
 ![fitnessapp login](https://i.imgur.com/7sLOoNo.png)
 
-<p style="text-align:center">Login Details Registration</p>
+Login Details Registration
 
 ![fitnessapp registerlogin](https://imgur.com/w2DHIcf.png)
 
-<p style="text-align:center">Profile Details Registration</p>
+Profile Details Registration
 
 ![fitnessapp registerdetails](https://i.imgur.com/O2P5OPk.png)
 
-<p style="text-align:center">Logged-in User Homepage</p>
+Logged-in User Homepage
 
 ![fitnessapp homepage](https://i.imgur.com/OvkXtj6.png)
 
-<p style="text-align:center">Workout History Page</p>
+Workout History Page
 
 ![fitnessapp workouthistory](https://i.imgur.com/A6t3MLR.png)
 
-<p style="text-align:center">Create Workout</p>
+Create Workout
 
 ![fitnessapp createworkout](https://i.imgur.com/5dcKb9X.png)
 
-<p style="text-align:center">Workout Page</p>
+Workout Page
 
 ![fitnessapp workout](https://i.imgur.com/W4jMJ9p.png)
 
-<p style="text-align:center">Exercise Autosuggestion</p>
+Exercise Autosuggestion
 
 ![fitnessapp autosuggestion](https://i.imgur.com/a09TUcY.png)
 
-<p style="text-align:center">Add Set Feature</p>
+Add Set Feature
 
 ![fitnessapp addset](https://imgur.com/en5K5mN.png)
 
-<p style="text-align:center">Edit Set Feature</p>
+Edit Set Feature
 
 ![fitnessapp editset](https://imgur.com/Q5L8pr2.png)
 
-<p style="text-align:center">Profile Page</p>
+Profile Page
 
 ![fitnessapp profile](https://i.imgur.com/xuzbUhB.png)
 
-<p style="text-align:center">Edit Profile Page</p>
+Edit Profile Page
 
 ![fitnessapp editprofile](https://i.imgur.com/zX2l5o5.png)
 
-<p style="text-align:center">Change Password Page</p>
+Change Password Page
 
 ![fitnessapp changepassword](https://i.imgur.com/1U6Emo0.png)
 
-<p style="text-align:center">Workout Analytics Page</p>
+Workout Analytics Page
 
 ![fitnessapp analytics](https://i.imgur.com/Ow6gJJ5.png)
 
