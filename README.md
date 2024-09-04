@@ -10,7 +10,8 @@
 6. [Project Layout](#Project-Layout)
 7. [Conclusion](#Conclusion)
 8. [Appendices](#Appendices)
-    1. [Files](#Files)
+    1. [Development Process](#Development-Process)
+    2. [Files](#Files)
 
 
 ## Introduction
