@@ -29,6 +29,8 @@ Password: demo
 
 ## Tutorial
 
+![test](https://imgur.com/w2DHIcf.png)
+
 work in progress.
 
 ## Tech Stack
