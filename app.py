@@ -168,10 +168,10 @@ def editprofile():
         if new_date_of_birth != profile["date_of_birth"] and new_date_of_birth != "":
             db.execute("UPDATE OR IGNORE user SET date_of_birth = ? WHERE id = ?;", new_date_of_birth, user_id)
 
-        if new_height != profile["height"] and new_height != "":
+        if new_height != profile["height_cm"] and new_height != "":
             db.execute("UPDATE OR IGNORE user SET height_cm = ? WHERE id = ?;", new_height, user_id)
 
-        if new_weight != profile["weight"] and new_weight != "":
+        if new_weight != profile["weight_kg"] and new_weight != "":
             db.execute("UPDATE OR IGNORE user SET weight_kg = ? WHERE id = ?;", new_weight, user_id)
 
         return redirect(url_for("profile"))
