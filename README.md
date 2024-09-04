@@ -29,8 +29,7 @@ Password: demo
 
 ## Tutorial
 
-![fitnessapp login](https://i.imgur.com/7sLOoNo.png)
-
+![fitnessapp login](https://i.imgur.com/7sLOoNo.png "login page")
 ![fitnessapp registerlogin](https://imgur.com/w2DHIcf.png)
 ![fitnessapp registerdetails](https://i.imgur.com/O2P5OPk.png)
 ![fitnessapp homepage](https://i.imgur.com/OvkXtj6.png)
