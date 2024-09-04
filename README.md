@@ -29,8 +29,6 @@ Password: demo
 
 ## Tutorial
 
-![fitnessapp homepage](../.screenshots/fitnessapp_homepage2.png)
-
 work in progress.
 
 ## Tech Stack
