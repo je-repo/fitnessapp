@@ -145,13 +145,37 @@ This project's templates are HTML files containing both static- and dynamic elem
 
 ## Conclusion
 
-Designing and implementing a full stack application from start to finish was a challenging and educational experience. The steps of this project followed broadly included ideation, define functionality, choose tech stack, implementing the front- and backend and repeating steps.
+What that went well include project completion, despite various challenges; overcoming motivational slumps from unexpected issues and acknowledging technologies are not a fit, after investing resources in them; and finally, continous iteration to keep  project features "sensible", and meet the deadline and project requirements.
 
-Some of the challenges encountered along the way are to reduce redundancy while designing a relational database, updating relational database tables, dealing with scope creep, troubleshooting unexpected problems, refactoring code, making tradeoffs and learning new technologies.
+Challenges along the way include difficulty in designing the relational database schema for all use cases, the database schema required later redesigning; scope creep from ongoing new insights and unexpected issues necessitated adjusting project specifications and troubleshooting; learning new technologies ad-hoc; balancing tradeoffs between technologies and planning and execution. 
+
+All in all, building a project from end-to-end as a beginner, was a challenging and interesting learning experience. For future reference, a formal software development process will be followed; thorough planning will be undertaken to minimise scope creep and unexpected challenges; and, where possible, an MVP will be defined and built to prove the concept, before investing resources into advanced features.
 
 <br>
 
 ## Appendices
+
+### Development Process
+
+Building a full stack application from end-to-end was a challenging and highly educational. The project broadly followed the subsequent steps:
+
+1. Ideation
+2. Define features
+3. Select tech stack
+4. Development (front- and backend)
+5. Updates
+6. Deployment
+
+The steps are similar to the below model, which can be referenced for future projects:
+
+1. Project Requirement Analysis & Planning
+2. Design and Prototyping
+3. Software Development
+4. Software Testing
+5. Deployment
+6. Maintenance and Updates
+
+<br>
 
 ### Files
 
