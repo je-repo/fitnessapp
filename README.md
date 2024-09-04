@@ -4,7 +4,7 @@
 
 1. [Introduction](#Introduction)
 2. [Login Credentials](#Login-Credentials)
-3. [Tutorial](#Tutorial)
+3. [Screenshots/Tutorial](#Screenshots/Tutorial)
 4. [Tech Stack](#Tech-Stack)
 5. [Features](#Features)
 6. [Project Layout](#Project-Layout)
@@ -27,21 +27,62 @@ The tech stack includes Python, JavaScript, Bootstrap, Flask, SQLite3, HTML, CSS
 Username: demo\
 Password: demo
 
-## Tutorial
+## Screenshots/Tutorial
 
-![fitnessapp login](https://i.imgur.com/7sLOoNo.png "login page")
+<p style="text-align:center">Login Page</p>
+
+![fitnessapp login](https://i.imgur.com/7sLOoNo.png)
+
+<p style="text-align:center">Login Details Registration</p>
+
 ![fitnessapp registerlogin](https://imgur.com/w2DHIcf.png)
+
+<p style="text-align:center">Profile Details Registration</p>
+
 ![fitnessapp registerdetails](https://i.imgur.com/O2P5OPk.png)
+
+<p style="text-align:center">Logged-in User Homepage</p>
+
 ![fitnessapp homepage](https://i.imgur.com/OvkXtj6.png)
+
+<p style="text-align:center">Workout History Page</p>
+
 ![fitnessapp workouthistory](https://i.imgur.com/A6t3MLR.png)
+
+<p style="text-align:center">Create Workout</p>
+
 ![fitnessapp createworkout](https://i.imgur.com/5dcKb9X.png)
+
+<p style="text-align:center">Workout Page</p>
+
 ![fitnessapp workout](https://i.imgur.com/W4jMJ9p.png)
+
+<p style="text-align:center">Exercise Autosuggestion</p>
+
 ![fitnessapp autosuggestion](https://i.imgur.com/a09TUcY.png)
+
+<p style="text-align:center">Add Set Feature</p>
+
 ![fitnessapp addset](https://imgur.com/en5K5mN.png)
+
+<p style="text-align:center">Edit Set Feature</p>
+
 ![fitnessapp editset](https://imgur.com/Q5L8pr2.png)
+
+<p style="text-align:center">Profile Page</p>
+
 ![fitnessapp profile](https://i.imgur.com/xuzbUhB.png)
+
+<p style="text-align:center">Edit Profile Page</p>
+
 ![fitnessapp editprofile](https://i.imgur.com/zX2l5o5.png)
+
+<p style="text-align:center">Change Password Page</p>
+
 ![fitnessapp changepassword](https://i.imgur.com/1U6Emo0.png)
+
+<p style="text-align:center">Workout Analytics Page</p>
+
 ![fitnessapp analytics](https://i.imgur.com/Ow6gJJ5.png)
 
 
