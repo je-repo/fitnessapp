@@ -29,7 +29,22 @@ Password: demo
 
 ## Tutorial
 
-![test](https://imgur.com/w2DHIcf.png)
+![fitnessapp login](https://i.imgur.com/7sLOoNo.png)
+
+![fitnessapp registerlogin](https://imgur.com/w2DHIcf.png)
+![fitnessapp registerdetails](https://i.imgur.com/O2P5OPk.png)
+![fitnessapp homepage](https://i.imgur.com/OvkXtj6.png)
+![fitnessapp workouthistory](https://i.imgur.com/A6t3MLR.png)
+![fitnessapp createworkout](https://i.imgur.com/5dcKb9X.png)
+![fitnessapp workout](https://i.imgur.com/W4jMJ9p.png)
+![fitnessapp autosuggestion](https://i.imgur.com/a09TUcY.png)
+![fitnessapp addset](https://imgur.com/en5K5mN.png)
+![fitnessapp editset](https://imgur.com/Q5L8pr2.png)
+![fitnessapp profile](https://i.imgur.com/xuzbUhB.png)
+![fitnessapp editprofile](https://i.imgur.com/zX2l5o5.png)
+![fitnessapp changepassword](https://i.imgur.com/1U6Emo0.png)
+![fitnessapp analytics](https://i.imgur.com/Ow6gJJ5.png)
+
 
 work in progress.
 

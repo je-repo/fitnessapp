@@ -51,6 +51,15 @@ tr * {
     align-items: center;
 }
 
+.edit-set-fields div:nth-child(1),
+.edit-set-fields div:nth-child(2),
+.edit-set-fields div:nth-child(3),
+.edit-set-fields div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .data-row-buttons-wrapper {
     display: flex;
     justify-content: center;
@@ -114,6 +123,7 @@ tr * {
 
 .edit-set-fields {
     display: inline-grid;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
 }
 
