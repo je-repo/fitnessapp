@@ -74,26 +74,23 @@ function displayName(value) {
 
 
 // editworkout.html - exercise autocomplete suggestions
+// queries exercise names from fitnessapp.db via .../exerise api
 document.addEventListener("DOMContentLoaded", function() {
-
-// ========================================================= WIP =========================================================
-// REDESIGN TO PULL SUGGESTIONS FROM LOCAL fitnessapp.db
     // autocomplete suggestions for exercise input field
     const exerciseListElement = document.querySelector("#exercise-list");
     const exerciseInputElement = document.querySelector("#exercise");
 
     // filters for requested API data
     const parameters = "pull";
-    // const parameters = "?language=2&is_main=False&ordering=name&limit=400";
-    // empty list to store transformed data
+    // empty list for transformed data
     let exercises = [];
 
 
     // populate exercises list with API data
     function fetchExercises() {
 
-        // fetch(`http://127.0.0.1:5000/exercise/${parameters}`)
-        fetch(`http://127.0.0.1:5000/exercise`)
+        // fetch(`http://127.0.0.1:5000/exercise`)
+        fetch(`https://fitnessapp-2bdb.onrender.com/exercise`)
             .then((response) => response.json())
             .then((data) => {
                 // return array of exercise names
@@ -155,27 +152,4 @@ document.addEventListener("DOMContentLoaded", function() {
         element.innerHTML = "";
     }
 });
-
-
-// redundant, as using bootstrap collapse feature instead
-// editworkout.html show/hide workout info (date, start time, end time) editing form
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     const editWorkoutWorkoutInfo = document.querySelector("#editworkout-info");
-//     const editWorkoutWorkoutInfoButton = document.querySelector("#editworkout-info button")
-//     const editWorkoutWorkoutInfoForm = document.querySelector("#editworkout-form");
-//     const editWorkoutWorkoutInfoFormButton = document.querySelectorAll("#editworkout-form button");
-
-//     editWorkoutWorkoutInfoButton.addEventListener("click", function() {
-//         editWorkoutWorkoutInfoForm.style.visibility = "visible";
-//     });
-
-//     editWorkoutWorkoutInfoFormButton.forEach( item => {
-//         item.addEventListener("click", function() {
-//             editWorkoutWorkoutInfoForm.style.visibility = "hidden";
-//         });
-//     });
-// });
-
-
 

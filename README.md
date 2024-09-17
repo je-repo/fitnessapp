@@ -207,6 +207,8 @@ What that went well include project completion, despite various challenges; over
 
 Challenges along the way include difficulty in designing the relational database schema for all use cases, the database schema required later redesigning; scope creep from ongoing new insights and unexpected issues necessitated adjusting project specifications and troubleshooting; learning new technologies ad-hoc; balancing tradeoffs between technologies and planning and execution. 
 
+Potential improvements to be made include adding subfolders to the static folder for each file type, such as "CSS", "JS" and "Images". The functions in app.py could be saved in files that are imported into app.py for a modular structure. Unit testing could be added to ensure features are working as expected.
+
 All in all, building a project from end-to-end as a beginner, was a challenging and interesting learning experience. For future reference, a formal software development process will be followed; thorough planning will be undertaken to minimise scope creep and unexpected challenges; and, where possible, an MVP will be defined and built to prove the concept, before investing resources into advanced features.
 
 <br>
