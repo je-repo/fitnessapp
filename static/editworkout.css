@@ -9,9 +9,12 @@
     margin: 25px auto;
 }
 
-/*  */
 #workoutinfo {
     text-align: start;
+}
+
+#exercise-list li {
+    list-style-type: none;
 }
 
 .edit-note-button, .delete-workout-button {
