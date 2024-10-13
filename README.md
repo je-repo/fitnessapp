@@ -1,5 +1,14 @@
 # fitnessapp
 
+## Table of Contents
+1. [Project Description](#project-description)
+2. [New and Old App Comparison](#new-and-old-app-comparison)
+3. [How to Install and Run the Project](#how-to-install-and-run-the-project)
+4. [How to Use the Project](#how-to-use-the-project)
+    1. [Login Credentials](#login-credentials)
+    2. [Tutorial](#tutorial)
+5. [Credits](#credits)
+
 ## Project Descripton
 "fitnessapp" is a fitness tracking web app. It lets users create profiles to track their workouts and visualise workout progression and -habits with graphs. 
 
@@ -28,13 +37,12 @@ Potential future improvements:
 
 All in all, building and revamping this project from end-to-end was a satisfying learning experience with exciting challenges. The know-how gained will aid in skilfully planning, managing scope creep, troubleshooting and implementing future technical projects.
 
-## Table of Contents
-1. [Project Description](#project-description)
-2. [How to Install and Run the Project](#how-to-install-and-run-the-project)
-3. [How to Use the Project](#how-to-use-the-project)
-    1. [Login Credentials](#login-credentials)
-    2. [Tutorial](#tutorial)
-4. [Credits](#credits)
+## New and Old App Comparison
+Below is a screenshot of the fitnessapp pre- and post revamp for reference.
+Note that this sample comparison is non-exhaustive of all differences between the two versions,
+which include UI redesign, new features and additional pages.
+
+![new and old app comparison](https://imgur.com/zT1UDIX.png)
 
 ## How to Install and Run the Project
 To install and run the project, follow these steps:
@@ -42,7 +50,6 @@ To install and run the project, follow these steps:
 2. [Install a Python virtual environment](https://docs.python.org/3/tutorial/venv.html)
 3. [Install the project's requirements.txt](https://www.freecodecamp.org/news/python-requirementstxt-explained/)
 4. [Run Flask app](https://flask.palletsprojects.com/en/3.0.x/quickstart/)(enter "flask run" into CLI)
-
 
 ## How to Use the Project
 ### Login Credentials
