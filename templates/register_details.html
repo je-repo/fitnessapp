@@ -1,39 +1,34 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <link rel="stylesheet" href="static/registration.css">
+{% endblock %}
+
 {% block title %}Register{% endblock %}
 
 {% block main %}
-    <div class="container text-center w-25">
+    <div class="container">
         <!-- register details post form -->
-        <form action="/register_details" method="post" class="row row-cols-1" id="registration-form">
+        <form action="/register_details" method="post" class="register-form" id="registration-form">
             <!-- first name -->
-            <div class="col">
                 <label for="firstname" class="form-label">First Name (Optional)</label>
                 <input type="text" class="form-control text-center" form="registration-form" name="firstname" autocomplete="off">
-            </div>
             <!-- last name -->
-            <div class="col">
                 <label for="lastname" class="form-label">Last Name (Optional)</label>
                 <input type="text" class="form-control text-center" form="registration-form" name="lastname" autocomplete="off">
-            </div>
             <!-- date of birth -->
-            <div class="col">
                 <label for="date-of-birth" class="form-label">Date of Birth (Optional)</label>
                 <input type="text" class="form-control text-center" form="registration-form" name="date-of-birth" autocomplete="off" onfocus="this.type='date'" onblur="this.type='text'">
-            </div>
             <!-- height (cm) -->
-            <div class="col">
                 <label for="height_cm" class="form-label">Height(CM) (Optional)</label>
                 <input type="text" class="form-control text-center" form="registration-form" name="height" autocomplete="off">
-            </div>
             <!-- weight (kg) -->
-            <div class="col">
                 <label for="weight_kg" class="form-label">Weight(KG) (Optional)</label>
                 <input type="text" class="form-control text-center" form="registration-form" name="weight" autocomplete="off">
-            </div>
-            
+                <!-- p tag to add space between button, without affecting formatting of other registration page -->
+                <p></p>
             <!-- submit button -->
-            <button type="submit" form="registration-form" class="btn btn-tertiary-color mt-3">Submit</button>
+            <button type="submit" form="registration-form" class="btn btn-tertiary-color registration-btn">Submit</button>
         </form>
     </div>
 {% endblock %}

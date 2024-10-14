@@ -1,45 +1,35 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="static/register_login.css">
+    <link rel="stylesheet" href="static/registration.css">
 {% endblock %}
 
 {% block title %}Register{% endblock %}
 
 {% block main %}
-    <div class="container text-center w-25">
+    <div class="container">
         <!-- register login post form -->
-        <!-- <form action="/register_login" method="post" class="row row-cols-1" id="registration-form"> -->
         <form action="/register_login" method="post" class="register-form" id="registration-form">
-
             <!-- username -->
-            <div class="">
                 <label for="username" class="form-label">Username (Required)</label>
                 <input type="text" class="form-control text-center" form="registration-form" name="username" autocomplete="off">
-            </div>
             <!-- password -->
-            <div class="">
                 <label for="password" class="form-label">Password (Required)</label>
                 <input type="password" class="form-control" form="registration-form" name="password">
-                <div class="form-text">Must contain at least one lowercase letter, uppercase letter, number and symbol.</div>
-            </div>
+                <p class="form-text">Must contain at least one lowercase letter, uppercase letter, number and symbol.</p>
             <!-- password confirmation -->
-            <div class="">
                 <label for="password_confirmation" class="form-label">Confirm Password (Required)</label>
                 <input type="password" class="form-control" form="registration-form" name="password_confirmation">
-                <div class="form-text">Must match with password above.</div>
-            </div>
+                <p class="form-text">Must match with password above.</p>
             <!-- email -->
-            <div class="">
                 <label for="email" class="form-label">E-Mail (Required)</label>
                 <input type="email" class="form-control" form="registration-form" name="email">
-                <div class="form-text">Enter a valid e-mail address.</div>
-            </div>
+                <p class="form-text">Enter a valid e-mail address.</p>
             
             <!-- submit button -->
-            <button type="submit" form="registration-form" class="btn btn-tertiary-color mt-3">Submit</button>
+            <button type="submit" form="registration-form" class="btn btn-tertiary-color registration-btn">Submit</button>
             <!-- back button -->
-            <button type="button" class="btn btn-tertiary-color mt-2" onclick="history.back()">Back</button>
+            <button type="button" class="btn btn-tertiary-color registration-btn" onclick="history.back()">Back</button>
         </form>
     </div>
 {% endblock %}
