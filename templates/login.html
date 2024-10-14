@@ -7,33 +7,22 @@
 {% block title %}Login{% endblock %}
 
 {% block main %}
-    <div class="container text-center">
+    <!-- <div class="container text-center"> -->
+    <div class="container">    
         <!-- login form(POST) -->
-        <form action="/login" method="post" class="row row-cols-1 login-form">
+        <form action="/login" method="post" class="login-form">
             <!-- username -->
-            <div class="col input-wrapper">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" name="username" autocomplete="off">
-            </div>
             <!-- password -->
-            <div class="col input-wrapper">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password">
-            </div>
             <!-- login button -->
-            <div class="login-button-wrapper">
             <button type="submit" class="btn btn-tertiary-color mt-3">Log In</button>
             <!-- /register_login -->
-            <a href="/register_login">
-                <button type="button" class="btn btn-tertiary-color mt-3">Register</button>
-            </a>
-            </div>
+            <a href="/register_login" id="registration-link">Register</a>
         </form>
-        
-
-    </div>
-    <div class="login-text">
-        <p>
+        <p id="login-credentials">
             <b>Demo login credentials</b>
             <br>
             Username: demo
