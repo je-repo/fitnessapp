@@ -15,11 +15,11 @@
 <!-- default weight unit is kg -->
 {% set default_weight = 'kg' %}
 
-<div class="container workoutinfo-container secondary-color-background" id="workoutinfo">
+<div class="container workoutinfo-container secondary-color-background">
     <!-- top row wrapper - workout info & delete workout button -->
-    <div>
-        <!-- workout info wrapper -->
-        <div>
+    <div class="datetime-container">
+        <!-- datetime container -->
+        <div class="datetime-display-container">
             <ul class="list-group list-group-horizontal">
                 <!-- date and weekday -->
                 <li class="list-group-item" style="border: none;">{{ workout_info[0].date | datetime_format }}</li>
@@ -28,21 +28,24 @@
                 <!-- finish time -->
                 <li class="list-group-item" style="border: none;">Finish: {{ workout_info[0].end_time }}</li>
                 <!-- edit button -->
-                <button type="button" class="btn btn-tertiary-color edit-datetime-button" >
-                    <!-- pen symbol -->
-                    <i class="bi bi-pen"></i>
-                </button>
             </ul>
+            <button type="button" class="btn btn-tertiary-color edit-datetime-button" >
+                <!-- pen symbol -->
+                <i class="bi bi-pen"></i>
+            </button>
         </div>
 
         <!-- hidden form - workout info -->
-        <div id="update-form">
-            <form action="/editworkout" method="post" id="edit-datetime-fields" class="hide" autocomplete="off">
-                <label class="form-label" for="editworkout-date">Date</label>
+        <div class="datetime-form-container">
+            <form action="/editworkout" method="post" id="edit-datetime-fields" class="hide datetime-form" autocomplete="off">
+                <!-- <label class="form-label" for="editworkout-date">Date</label> -->
+                <label for="editworkout-date">Date</label>
                 <input type="date" class="form-control-sm" name="editworkout-date" id="editworkout-date" value="{{ workout_info[0].date }}">
-                <label class="form-label" for="editworkout-start-time">Start</label>
+                <!-- <label class="form-label" for="editworkout-start-time">Start</label> -->
+                <label for="editworkout-start-time">Start</label>
                 <input type="time" class="form-control-sm" name="editworkout-start-time" id="editworkout-start-time" value="{{ workout_info[0].start_time }}">
-                <label class="form-label" for="editworkout-end-time">End</label>
+                <!-- <label class="form-label" for="editworkout-end-time">End</label> -->
+                <label for="editworkout-end-time">End</label>
                 <input type="time" class="form-control-sm" name="editworkout-end-time" id="editworkout-end-time" value="{{ workout_info[0].end_time }}">
                 <button type="submit" form="edit-datetime-fields" class="btn btn-tertiary-color">
                     <!-- check icon -->
@@ -91,17 +94,17 @@
     </div>
     
     <!-- add exercise form -->
-    <form action="/editworkout" method="post" class="#" id="add-set" autocomplete="off">
-        <div class="row row-cols-5">
+    <div class="add-exercise-container">
+        <form action="/editworkout" method="post" class="add-exercise-form" autocomplete="off">
             <!-- exercise -->
-            <div class="col">
+            <div>
                 <label for="exercise" class="form-label">Exercise</label>
                 <input type="text" class="form-control text-center" name="exercise" id="exercise" form="add-set">
                 <!-- autocomplete list for exercise input box -->
                 <ul id="exercise-list"></ul>
             </div>
             <!-- set -->
-            <div class="col">
+            <div>
                 <label for="set" class="form-label">Set</label>
                 <input type="number" class="form-control text-center" name="set" id="set" form="add-set">
             </div>
@@ -111,7 +114,7 @@
                 <input type="number" class="form-control text-center" name="reps" id="reps" form="add-set">
             </div>
             <!-- weight (kg) -->
-            <div class="col">
+            <div>
                 <!-- dynamic weight label -->
                 {% if profile_data.weight_unit == default_weight %}
                     <label for="weight" class="form-label">Weight (KG)</label>
@@ -120,16 +123,14 @@
                 {% endif %}
                 <input type="number" class="form-control text-center" name="weight" id="weight" form="add-set">
             </div>
-            <!-- add button -->
-            <div class="col d-flex justify-content-center">
-            <!-- <div class="col"> -->
-                <button type="submit" class="btn btn-tertiary-color align-self-center" form="add-set">
-                    <!-- Plus symbol -->
-                    <i class="bi bi-plus-lg"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+        </form>
+        <!-- add set button -->
+        <button type="submit" class="btn btn-tertiary-color" form="add-set">
+            <!-- Plus symbol -->
+            <!-- <i class="bi bi-plus-lg"></i> -->
+             Add Exercise
+        </button>
+    </div>
 </div>
 
 <div class="container workout-data-container">
@@ -271,15 +272,11 @@
                                             <!-- set -->
                                             {{ set.exercise_set }}
                                         </div>
-                                        <div>
                                             <!-- reps -->
                                             <input type="number" class="form-control text-center" name="edit-reps" id="reps" form="edit-set-{{ set.user_id }}{{ set.workout_id }}{{ set.exercise_id }}{{ set.exercise_set }}" value="{{ set.reps }}">
-                                        </div>
-                                        <div>
                                             <!-- weight (kg) -->
                                             <input type="number" class="form-control text-center" name="edit-weight" id="weight" form="edit-set-{{ set.user_id }}{{ set.workout_id }}{{ set.exercise_id }}{{ set.exercise_set }}" value="{{ set.weight_kg }}">
-                                        </div>
-                                        <div>
+                                        <div class="data-row-buttons-wrapper">
                                             <!-- cancel button -->
                                             <button type="button" class="btn btn-tertiary-color align-self-center edit-set-button btn-margin-and-size" value="display-edit-set-{{ set.exercise_id }}{{ set.exercise_set }}">
                                                 <!-- check icon -->

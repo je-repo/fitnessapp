@@ -1,4 +1,19 @@
 /* format datetime background and font color */
+.datetime-container {
+    margin-bottom: .5rem;
+}
+
+
+.datetime-display-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list-group {
+    display: inline-flex;
+}
+
 .list-group-item {
     color: inherit;
     background-color: transparent;
@@ -7,19 +22,34 @@
 .workoutinfo-container {
     padding: 25px;
     margin: 25px auto;
-}
-
-#workoutinfo {
     text-align: start;
 }
 
-#exercise-list li {
-    list-style-type: none;
+.datetime-form-container {
+    margin-top: 0.5rem;
+}
+
+.datetime-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: .5rem;
+}
+
+/* vertically center text within labels */
+.datetime-form label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .edit-note-button, .delete-workout-button {
     min-width: 140px;
     margin: 2px 0;
+}
+
+#exercise-list li {
+    list-style-type: none;
 }
 
 .btn-margin-and-size {
@@ -28,9 +58,25 @@
     margin: 0 2px;
 }
 
-/* set top and bottom margin for "add new set form" that is always visible */
-#add-set {
-    margin: 20px 0;
+/* add-set form */
+.add-exercise-container {
+    margin-top: .5rem;
+    text-align: center;
+}
+
+.add-exercise-container button {
+    min-width: 105px;
+    width: 20%;
+}
+
+.add-exercise-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: .5rem;
+}
+
+.add-exercise-form div {
+    text-align: center;
 }
 
 /* remove bootstrap default white bottom border lines */
@@ -43,21 +89,13 @@ tr * {
 }
 
 .exercise-data-row {
-    margin-bottom: 10px;
+    margin-bottom: .5rem;
 }
 
 .exercise-data-row div:nth-child(1),
 .exercise-data-row div:nth-child(2),
-.exercise-data-row div:nth-child(3) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.edit-set-fields div:nth-child(1),
-.edit-set-fields div:nth-child(2),
-.edit-set-fields div:nth-child(3),
-.edit-set-fields div:nth-child(3) {
+.exercise-data-row div:nth-child(3),
+.edit-set-fields div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,10 +135,11 @@ tr * {
 .exercise-data-row {
     display: inline-grid;
     grid-template-columns: repeat(4, 1fr);
+    column-gap: .5rem;
 }
 
 .exercise-name-and-add-set-button {
-    margin-bottom: 10px;
+    margin-bottom: .5rem;
 }
 
 .exercise-name-and-add-set-button div:nth-child(1) {
@@ -128,6 +167,8 @@ tr * {
     display: inline-grid;
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
+    margin-bottom: .5rem;
+    column-gap: .5rem;
 }
 
 .note-input-form {
