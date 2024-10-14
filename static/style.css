@@ -33,6 +33,10 @@ body {
     color: var(--text-color);
 }
 
+main {
+    min-height: 80vh;
+}
+
 .footer-links-list {
     list-style: none;
 }
