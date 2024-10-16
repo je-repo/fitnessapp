@@ -114,8 +114,6 @@ Workout Analytics Page
 
 ![fitnessapp analytics](https://i.imgur.com/Ow6gJJ5.png)
 
-
-
 ## Credits
 [Harvard CS50x - Introduction to Computer Science](https://cs50.harvard.edu/x/2024/)
 
