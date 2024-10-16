@@ -72,7 +72,7 @@
 .add-exercise-form {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: .5rem;
+    column-gap: 1rem;
 }
 
 .add-exercise-form div {
@@ -86,10 +86,6 @@ tr * {
 
 .exercise-name-row {
     font-size: 1.4rem;
-}
-
-.exercise-data-row {
-    margin-bottom: .5rem;
 }
 
 .exercise-data-row div:nth-child(1),
@@ -127,15 +123,20 @@ tr * {
     flex-direction: column;
     width: 100%;
     margin-bottom: 30px;
-    padding: 25px 0;
+    padding: 2rem;
 }
 
 .exercise-name-and-add-set-button,
 .column-headings-row,
-.exercise-data-row {
+.exercise-data-row,
+.edit-set-fields,
+.add-set-header-row,
+.add-set-input-row {
     display: inline-grid;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: .5rem;
+    column-gap: 1rem;
+    margin-bottom: .5rem;
 }
 
 .exercise-name-and-add-set-button {
@@ -153,24 +154,6 @@ tr * {
     grid-column: 4 / 5;
 }
 
-.add-set-header-row {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.add-set-input-row {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.edit-set-fields {
-    display: inline-grid;
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    margin-bottom: .5rem;
-    column-gap: .5rem;
-}
-
 .note-input-form {
     display: flex;
     flex-direction: column;
@@ -186,8 +169,7 @@ tr * {
 
 /* 
 show/hide elements
-position after classes with "display: inline-grid;" is important.
-being the "last processed css", relative to above-mentioned classes, ensures elements with hide class are hidden. 
+this code needs to come after "display: inline-grid;", as not to be overwritten.
 */
 .hide {
     display: none;

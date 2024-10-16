@@ -2,6 +2,7 @@
 
 <!-- load page specific stylesheet -->
 {% block head %}
+    <script src="/static/editworkout.js"></script>
     <link rel="stylesheet" href="static/editworkout.css">
 {% endblock %}
 
@@ -109,7 +110,7 @@
                 <input type="number" class="form-control text-center" name="set" id="set" form="add-set">
             </div>
             <!-- reps -->
-            <div class="col">
+            <div>
                 <label for="reps" class="form-label">Reps</label>
                 <input type="number" class="form-control text-center" name="reps" id="reps" form="add-set">
             </div>
@@ -208,14 +209,14 @@
                         <!-- visible -->
                         <!-- exercise table column headings -->
                         <div class="column-headings-row "> <!-- column headings row -->
-                            <div scope="col">Set</div>
-                            <div scope="col">Reps</div>
+                            <div>Set</div>
+                            <div>Reps</div>
                             {% if profile_data.weight_unit == default_weight %}
-                                <div scope="col">Weight (KG)</div>
+                                <div>Weight (KG)</div>
                             {% else %}
-                                <div scope="col">Weight (LBS)</div>
+                                <div>Weight (LBS)</div>
                             {% endif %}
-                            <div scope="col"></div>
+                            <div></div>
                         </div>
 
                         {% for set in sets %}
