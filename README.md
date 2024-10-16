@@ -14,7 +14,7 @@
 
 This is a revamp of my final project from the "Harvard cs50x - Introduction to Computer Science" course. It is used as a portfolio project, as it illustrates the progression of my early progamming journey well. The idea was self-selected and implemented from end-to-end. The revamp included significant improvements in new features, database schemas, pages and design.
 
-The tech stack includes popular web development technologies, as per project requirements:
+The tech stack includes widely adopted web development technologies, as per project requirements:
 - Python
 - JavaScript
 - Bootstrap
